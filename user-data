@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Create the per-boot script
+cat << 'EOF' > /var/lib/cloud/scripts/per-boot/my-boot-script.sh
+#!/bin/bash
+echo "Boot script ran at: $(date)" >> /var/log/per-boot.log
+EOF
+
+# Make it executable
+chmod +x /var/lib/cloud/scripts/per-boot/my-boot-script.sh
